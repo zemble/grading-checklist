@@ -33,26 +33,26 @@ export default function GradingForm() {
     nzMarket: {
       title: "NZ Market (10)",
       items: [
-        { id: 'nz1', label: 'Demographic section', score: 2, checked: false },
-        { id: 'nz2', label: 'Socioeconomic section', score: 2, checked: false },
-        { id: 'nz3', label: 'Geographic section', score: 2, checked: false },
-        { id: 'nz4', label: 'Culture Section', score: 2, checked: false },
-        { id: 'nz5', label: 'Behaviour section', score: 2, checked: false },
+        { id: 'nz1', label: 'Demographic section includes population, ethnic groups, major cities, average ages', score: 2, checked: false },
+        { id: 'nz2', label: 'Socioeconomic section includes correct median income, occupations,etc.', score: 2, checked: false },
+        { id: 'nz3', label: 'Geographic section explains consumption behaviour by location', score: 2, checked: false },
+        { id: 'nz4', label: 'Culture Section cultural aspects that affect CB', score: 2, checked: false },
+        { id: 'nz5', label: 'Behaviour section specific examples of CB in NZ', score: 2, checked: false },
         { id: 'nz6', label: 'No chart included in this section', score: -2, checked: false },
         { id: 'nz7', label: 'Missing citations', score: -2, checked: false },
         { id: 'nz8', label: 'Inaccurate citations', score: -2, checked: false },
-        { id: 'nz9', label: "Parts don't make sense or not in NZ", score: -2, checked: false },
-        { id: 'nz10', label: 'Suspected Undeclared AI use', score: 0, checked: false }
+        { id: 'nz9', label: "Parts don't make sense or not in NZ or too broad to refer to NZ alone", score: -2, checked: false },
+        { id: 'nz10', label: "Obviously inaccurate statistics eg population under 5 million", score: -2, checked: false },
+        { id: 'nz11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
     segment1: {
       title: "Segment 1 (10)",
       items: [
         { id: 's1_1', label: 'Has segment name', score: 2, checked: false },
-        { id: 's1_2', label: 'Demographic factors', score: 2, checked: false },
-        { id: 's1_3', label: 'Geographic factors', score: 2, checked: false },
-        { id: 's1_4', label: 'Socioeconomic factors', score: 2, checked: false },
-        { id: 's1_5', label: 'Behavioural factors related to product', score: 2, checked: false },
+        { id: 's1_2', label: 'Demographic factors (age, gender, location)', score: 2, checked: false },
+        { id: 's1_4', label: 'Socioeconomic factors (versus median income, occupation)', score: 2, checked: false },
+        { id: 's1_5', label: 'Behavioural, cultural factors related to product (how product is used, accessed)', score: 2, checked: false },
         { id: 's1_6', label: 'Income level not compared to median income', score: -2, checked: false },
         { id: 's1_7', label: 'Too general to be an identified segment', score: -2, checked: false },
         { id: 's1_8', label: 'Unclear as to how segment derives value from product', score: -2, checked: false },
@@ -63,10 +63,9 @@ export default function GradingForm() {
       title: "Segment 2 (10)",
       items: [
         { id: 's2_1', label: 'Has segment name', score: 2, checked: false },
-        { id: 's2_2', label: 'Demographic factors', score: 2, checked: false },
-        { id: 's2_3', label: 'Geographic factors', score: 2, checked: false },
-        { id: 's2_4', label: 'Socioeconomic factors', score: 2, checked: false },
-        { id: 's2_5', label: 'Behavioural factors related to product', score: 2, checked: false },
+        { id: 's2_2', label: 'Demographic factors (age, gender, location)', score: 2, checked: false },
+        { id: 's2_4', label: 'Socioeconomic factors (versus median income, occupation)', score: 2, checked: false },
+        { id: 's2_5', label: 'Behavioural, cultural factors related to product (how product is used, accessed)', score: 2, checked: false },
         { id: 's2_6', label: 'Income level not compared to median income', score: -2, checked: false },
         { id: 's2_7', label: 'Too general to be an identified segment', score: -2, checked: false },
         { id: 's2_8', label: 'Unclear as to how segment derives value from product', score: -2, checked: false },
@@ -76,11 +75,10 @@ export default function GradingForm() {
     identity: {
       title: "Identity (5)",
       items: [
-        { id: 'id1', label: 'Has segment name - same as one of previous segments', score: 1, checked: false },
-        { id: 'id2', label: 'Demographic factors', score: 1, checked: false },
-        { id: 'id3', label: 'Geographic factors', score: 1, checked: false },
-        { id: 'id4', label: 'Socioeconomic factors', score: 1, checked: false },
-        { id: 'id5', label: 'Behavioural factors related to product', score: 1, checked: false },
+        { id: 'id1', label: 'Has segment name (matches previous)', score: 1, checked: false },
+        { id: 'id2', label: 'Demographic factors (as previous)', score: 1, checked: false },
+        { id: 'id4', label: 'Socioeconomic factors (as previous)', score: 1, checked: false },
+        { id: 'id5', label: 'Behavioural, cultural factors (as previous))', score: 2, checked: false },
         { id: 'id6', label: 'Income level not compared to median income', score: -2, checked: false },
         { id: 'id7', label: 'Too general to be an identified segment', score: -1, checked: false },
         { id: 'id8', label: 'Unclear as to how segment derives value from product', score: -1, checked: false },
@@ -90,10 +88,12 @@ export default function GradingForm() {
     sufficiency: {
       title: "Sufficiency (5)",
       items: [
-        { id: 'suf1', label: 'Clearly states a number of people in segment', score: 2, checked: false },
+        { id: 'suf1', label: 'Clearly states a number of people in segment relative to NZ total', score: 2, checked: false },
         { id: 'suf2', label: 'Uses correct, relevant citations (with references at the end)', score: 1, checked: false },
+        { id: 'suf6', label: 'Justifies and explains how the number was derived', score: 2, checked: false },
         { id: 'suf3', label: 'Unclear explanation of how the segment size was derived', score: -2, checked: false },
         { id: 'suf4', label: 'Number is too general/broad and could include non-segment consumers', score: -2, checked: false },
+        { id: 'suf7', label: 'Explanation unclear or unconvincing', score: -2, checked: false },
         { id: 'suf5', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
@@ -121,12 +121,12 @@ export default function GradingForm() {
       ]
     },
     positioningStatement: {
-      title: "Positioning Statement (8)",
+      title: "Positioning Statement (8) - can be multi-sentence but fewer than 5 lines",
       items: [
-        { id: 'ps1', label: 'In which product, service, or market category will the product operate?', score: 2, checked: false },
-        { id: 'ps2', label: 'Briefly the target customer will be?', score: 2, checked: false },
-        { id: 'ps3', label: 'What value criteria will customers use to evaluate the product?', score: 2, checked: false },
-        { id: 'ps4', label: 'What factors differentiate the brand from competitors?', score: 2, checked: false },
+        { id: 'ps1', label: 'States what the product/service actuall is', score: 2, checked: false },
+        { id: 'ps2', label: 'States briefly the primary target customer market', score: 2, checked: false },
+        { id: 'ps3', label: 'States the criteria the target customers will use to evaluate the product', score: 2, checked: false },
+        { id: 'ps4', label: 'States the key factors that differentiate the brand from competitors', score: 2, checked: false },
         { id: 'ps5', label: 'Unclear in anyway', score: -2, checked: false },
         { id: 'ps6', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
@@ -135,15 +135,14 @@ export default function GradingForm() {
       title: "Positioning Map (7)",
       items: [
         { id: 'pm1', label: 'Two axis grid map', score: 1, checked: false },
-        { id: 'pm2', label: 'Axis labels are clear', score: 1, checked: false },
+        { id: 'pm2', label: 'Axis labels are legible', score: 1, checked: false },
         { id: 'pm3', label: 'Axis labels correctly reference the values in the positioning statement', score: 3, checked: false },
-        { id: 'pm4', label: 'Axis labels make sense', score: 1, checked: false },
-        { id: 'pm5', label: '4+ brands plotted on the map', score: 1, checked: false },
+        { id: 'pm5', label: '4+ brands plotted on the map', score: 2, checked: false },
         { id: 'pm6', label: 'Quality used on axes', score: -3, checked: false },
         { id: 'pm7', label: "Map unclear in any way (too small, low res, can't be read)", score: -1, checked: false },
         { id: 'pm8', label: 'Title missing', score: -1, checked: false },
         { id: 'pm9', label: 'One or more axis label missing', score: -1, checked: false },
-        { id: 'pm10', label: "Student's brand missing", score: -1, checked: false },
+        { id: 'pm10', label: "Student's brand missing from map", score: -1, checked: false },
         { id: 'pm11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
@@ -163,7 +162,7 @@ export default function GradingForm() {
       items: [
         { id: 'pr1', label: 'Report is clear and well written with no obvious grammatical or spelling errors', score: 3, checked: false },
         { id: 'pr2', label: 'Report is well researched with correct citations appearing in the text and mirrored in the reference list', score: 3, checked: false },
-        { id: 'pr3', label: 'Report uses concise writing style', score: 3, checked: false },
+        { id: 'pr3', label: 'Report uses concise writing style - not padded, paragraphs mostly under 5 lines', score: 3, checked: false },
         { id: 'pr4', label: 'Report uses bullets correctly whenever referencing a list (no more than 2 lines per bullet)', score: 3, checked: false },
         { id: 'pr5', label: 'Report uses good structure with clear headers, subheaders and spacing between headers and text', score: 3, checked: false },
         { id: 'pr6', label: 'Multiple spelling errors', score: -2, checked: false },
@@ -171,6 +170,7 @@ export default function GradingForm() {
         { id: 'pr8', label: 'Multiple APA format errors', score: -2, checked: false },
         { id: 'pr9', label: 'Poorly formatted reference list', score: -2, checked: false },
         { id: 'pr10', label: 'Writing is unclear in parts', score: -2, checked: false },
+        { id: 'pr12', label: 'Exceeds 6 pages of content', score: -2, checked: false },
         { id: 'pr11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     }
