@@ -1,9 +1,6 @@
 import React, { useState, useRef } from 'react';
 
 export default function GradingForm() {
-  // State for grader's initials
-  const [graderInitials, setGraderInitials] = useState('');
-  
   // State for comments
   const [comments, setComments] = useState({
     productDescription: '',
@@ -27,7 +24,7 @@ export default function GradingForm() {
       items: [
         { id: 'pd1', label: 'Product description is clear', score: 2, checked: false },
         { id: 'pd2', label: 'Brand is clear', score: 1, checked: false },
-        { id: 'pd6', label: 'Clearly aligns with theme', score: 2, checked: false },
+        { id: 'pd6', label: 'Aligns with semester theme', score: 2, checked: false },
         { id: 'pd3', label: 'Product value to customer is unclear', score: -2, checked: false },
         { id: 'pd4', label: 'Product seems unoriginal', score: -2, checked: false },
         { id: 'pd5', label: 'Suspected Undeclared AI use', score: 0, checked: false }
@@ -179,11 +176,6 @@ export default function GradingForm() {
     }
   });
 
-  // Function to handle initials change
-  const handleInitialsChange = (event) => {
-    setGraderInitials(event.target.value);
-  };
-
   // Function to handle checkbox changes
   const handleCheckboxChange = (sectionKey, itemId) => {
     setSections(prevSections => {
@@ -212,25 +204,26 @@ export default function GradingForm() {
     }));
   };
 
-  // Calculate score for a section
-  const calculateSectionScore = (sectionKey) => {
-    // If the AI item is checked, return 0
-    if (sections[sectionKey].items.find(item => 
-      item.label.includes('Suspected Undeclared AI use') && item.checked)) {
-      return 0;
-    }
-    
-    // Calculate normal score
-    const score = sections[sectionKey].items.reduce((total, item) => {
-      return item.checked ? total + item.score : total;
-    }, 0);
-    
-    // Return 0 if score is negative, otherwise return the score
-    return Math.max(0, score);
-  };
+// Calculate score for a section
+const calculateSectionScore = (sectionKey) => {
+  // If the AI item is checked, return 0
+  if (sections[sectionKey].items.find(item => 
+    item.label.includes('Suspected Undeclared AI use') && item.checked)) {
+    return 0;
+  }
+  
+  // Calculate normal score
+  const score = sections[sectionKey].items.reduce((total, item) => {
+    return item.checked ? total + item.score : total;
+  }, 0);
+  
+  // Return 0 if score is negative, otherwise return the score
+  return Math.max(0, score);
+};
+
 
   // Copy function for each section
-  const copySection = (sectionKey, saveToSheet = false) => {
+  const copySection = (sectionKey) => {
     const section = sections[sectionKey];
     const score = calculateSectionScore(sectionKey);
     const sectionTitle = section.title;
@@ -240,13 +233,11 @@ export default function GradingForm() {
     const uncheckedItems = section.items.filter(item => !item.checked && item.score > 0);
     
     let textToCopy = `${sectionTitle}: Score = ${score}\n\n`;
-    let detailsText = "";
     
     if (checkedItems.length > 0) {
       textToCopy += "Achieved:\n";
       checkedItems.forEach(item => {
         textToCopy += `- ${item.label} (${item.score})\n`;
-        detailsText += `Achieved: ${item.label} (${item.score})\n`;
       });
       textToCopy += "\n";
     }
@@ -255,7 +246,6 @@ export default function GradingForm() {
       textToCopy += "Not Achieved:\n";
       uncheckedItems.forEach(item => {
         textToCopy += `- ${item.label} (${item.score})\n`;
-        detailsText += `Not Achieved: ${item.label} (${item.score})\n`;
       });
       textToCopy += "\n";
     }
@@ -268,39 +258,6 @@ export default function GradingForm() {
     navigator.clipboard.writeText(textToCopy)
       .then(() => alert(`${sectionTitle} copied to clipboard!`))
       .catch(err => console.error('Failed to copy text: ', err));
-      
-    // Save to spreadsheet if requested
-    if (saveToSheet) {
-      // Replace with your Google Apps Script Web App URL
-      const apiUrl = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
-      
-      fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          graderInitials: graderInitials,
-          sectionName: sectionTitle,
-          score: score,
-          comments: comments[sectionKey] || '',
-          details: detailsText
-        }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.result === 'success') {
-          alert('Successfully saved to spreadsheet!');
-        } else {
-          alert('Error saving to spreadsheet.');
-          console.error(data.error);
-        }
-      })
-      .catch(error => {
-        alert('Error connecting to spreadsheet.');
-        console.error('Error:', error);
-      });
-    }
   };
 
   // Calculate total score across all sections
@@ -313,19 +270,6 @@ export default function GradingForm() {
   return (
     <div className="p-6 max-w-4xl mx-auto bg-white">
       <h1 className="text-2xl font-bold mb-6 text-center">Grading Checklist Form</h1>
-      
-      <div className="mb-6 p-4 border rounded-lg shadow">
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Grader's Initials:
-        </label>
-        <input
-          type="text"
-          value={graderInitials}
-          onChange={handleInitialsChange}
-          className="w-full p-2 border rounded-md"
-          placeholder="Enter your initials"
-        />
-      </div>
       
       {Object.keys(sections).map(sectionKey => (
         <div key={sectionKey} className="mb-8 p-4 border rounded-lg shadow">
@@ -363,20 +307,12 @@ export default function GradingForm() {
             />
           </div>
           
-          <div className="mt-3 flex space-x-2">
-            <button
-              onClick={() => copySection(sectionKey)}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-            >
-              Copy Section
-            </button>
-            <button
-              onClick={() => copySection(sectionKey, true)}
-              className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-            >
-              Save to Spreadsheet
-            </button>
-          </div>
+          <button
+            onClick={() => copySection(sectionKey)}
+            className="mt-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+          >
+            Copy Section
+          </button>
         </div>
       ))}
       
