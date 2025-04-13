@@ -24,8 +24,8 @@ export default function GradingForm() {
       items: [
         { id: 'pd1', label: 'Product description is clear', score: 2, checked: false },
         { id: 'pd2', label: 'Brand is clear', score: 1, checked: false },
-        { id: 'pd6', label: 'Aligns with semester theme', score: 2, checked: false },
-        { id: 'pd3', label: 'Product value to customer is unclear', score: -2, checked: false },
+        { id: 'pd3', label: 'Customer value is clearly described', score: 2, checked: false },
+        { id: 'pd6', label: 'Not clearly aligned with semester theme', score: -2, checked: false },
         { id: 'pd4', label: 'Product seems unoriginal', score: -2, checked: false },
         { id: 'pd5', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
@@ -41,8 +41,8 @@ export default function GradingForm() {
         { id: 'nz6', label: 'No chart included in this section', score: -2, checked: false },
         { id: 'nz7', label: 'Missing citations', score: -2, checked: false },
         { id: 'nz8', label: 'Inaccurate citations', score: -2, checked: false },
-        { id: 'nz9', label: "Parts don't make sense or not in NZ or too broad to refer to NZ alone", score: -2, checked: false },
-        { id: 'nz10', label: "Obviously inaccurate statistics eg population under 5 million", score: -2, checked: false },
+        { id: 'nz9', label: 'Parts don't make sense or not in NZ or too broad to refer to NZ alone', score: -2, checked: false },
+        { id: 'nz10', label: 'Obviously inaccurate statistics eg population under 5 million', score: -2, checked: false },
         { id: 'nz11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
@@ -69,6 +69,7 @@ export default function GradingForm() {
         { id: 's2_6', label: 'Income level not compared to median income', score: -2, checked: false },
         { id: 's2_7', label: 'Too general to be an identified segment', score: -2, checked: false },
         { id: 's2_8', label: 'Unclear as to how segment derives value from product', score: -2, checked: false },
+        { id: 's2_10', label: 'Not distinct from Segment 1', score: -2, checked: false }
         { id: 's2_9', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
