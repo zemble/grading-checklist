@@ -271,7 +271,7 @@ const calculateSectionScore = (sectionKey) => {
 
   return (
     <div className="p-6 max-w-4xl mx-auto bg-white">
-      <h1 className="text-2xl font-bold mb-6 text-center">Grading Checklist Form for STP 2025A</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center">Grading Checklist for STP 2025A</h1>
       
       {Object.keys(sections).map(sectionKey => (
         <div key={sectionKey} className="mb-8 p-4 border rounded-lg shadow">
