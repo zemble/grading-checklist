@@ -168,11 +168,12 @@ export default function GradingForm() {
         { id: 'pr5', label: 'Report uses good structure with clear headers, subheaders and spacing between headers and text', score: 3, checked: false },
         { id: 'pr6', label: 'Multiple spelling errors', score: -2, checked: false },
         { id: 'pr7', label: 'Multiple grammatical errors', score: -2, checked: false },
-        { id: 'pr8', label: 'Multiple APA format errors', score: -2, checked: false },
-        { id: 'pr9', label: 'Poorly formatted reference list', score: -2, checked: false },
+        { id: 'pr8', label: 'Multiple APA citation format errors in text', score: -2, checked: false },
+        { id: 'pr9', label: 'Reference list is not correct APA, not in alphabetical order or incomplete', score: -2, checked: false },
         { id: 'pr10', label: 'Writing is unclear in parts', score: -2, checked: false },
         { id: 'pr12', label: 'Exceeds 6 pages of content', score: -2, checked: false },
-        { id: 'pr11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
+        { id: 'pr13', label: 'Multiple inaccurate, poorly chosen or irrelevant citations used', score: -2, checked: false },
+        {id: 'pr11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     }
   });
