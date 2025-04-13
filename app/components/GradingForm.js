@@ -31,18 +31,20 @@ export default function GradingForm() {
       ]
     },
     nzMarket: {
-      title: "NZ Market (10)",
+      title: "NZ Market (15)",
       items: [
-        { id: 'nz1', label: 'Demographic section includes population, ethnic groups, major cities, average ages', score: 2, checked: false },
-        { id: 'nz2', label: 'Socioeconomic section includes correct median income, occupations,etc.', score: 2, checked: false },
-        { id: 'nz3', label: 'Geographic section explains consumption behaviour by location', score: 2, checked: false },
-        { id: 'nz4', label: 'Culture Section cultural aspects that affect CB', score: 2, checked: false },
-        { id: 'nz5', label: 'Behaviour section specific examples of CB in NZ', score: 2, checked: false },
+        { id: 'nz1', label: 'Demographic section includes population, ethnic groups, major cities, average ages', score: 3, checked: false },
+        { id: 'nz2', label: 'Socioeconomic section includes correct median individual annual income, occupations,etc.', score: 3, checked: false },
+        { id: 'nz3', label: 'Geographic section explains consumption behaviour by location', score: 3, checked: false },
+        { id: 'nz4', label: 'Culture Section cultural aspects that affect CB', score: 3, checked: false },
+        { id: 'nz5', label: 'Behaviour section specific examples of CB in NZ', score: 3, checked: false },
         { id: 'nz6', label: 'No chart included in this section', score: -2, checked: false },
-        { id: 'nz7', label: 'Incorrect median income OR incorrect citation for median income', score: -2, checked: false },
+        { id: 'nz7', label: 'Incorrect most recent median income OR incorrect citation for median income', score: -2, checked: false },
         { id: 'nz8', label: 'Missing or inaccurate statistics (e.g. population etc.)', score: -2, checked: false },
-        { id: 'nz9', label: 'Missing or inaccurate citations (not valid sources, missing references, etc.)', score: -2, checked: false },
-        { id: 'nz10', label: 'Parts dont make sense for actual NZ or are too broad (could refer to any country)', score: -2, checked: false },
+        { id: 'nz9', label: 'Missing, inaccurate, old (pre-2018), or invalid citations used', score: -2, checked: false },
+        { id: 'nz10', label: 'Parts do not clearly and explicitly explain consumers in NZ (could refer to any country)', score: -2, checked: false },
+        { id: 'nz12', label: 'One or more parts are excessively brief or inadequately annotated', score: -2, checked: false },
+        { id: 'nz13', label: 'Multiple citations from same source in same year not correctly formatted', score: -2, checked: false },
         { id: 'nz11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
