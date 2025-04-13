@@ -23,10 +23,10 @@ export default function GradingForm() {
       title: "Product Description (5)",
       items: [
         { id: 'pd1', label: 'Product description is clear', score: 2, checked: false },
-        { id: 'pd2', label: 'Brand is clear', score: 1, checked: false },
-        { id: 'pd3', label: 'Customer value is clearly described', score: 2, checked: false },
-        { id: 'pd6', label: 'Not clearly aligned with semester theme', score: -2, checked: false },
-        { id: 'pd4', label: 'Product seems unoriginal', score: -2, checked: false },
+        { id: 'pd2', label: 'Brand is stated and clear', score: 1, checked: false },
+        { id: 'pd3', label: 'Product value/benefit to customer is clear', score: 2, checked: false },
+        { id: 'pd6', label: 'Not obviously aligned with semester theme', score: -2, checked: false },
+        { id: 'pd4', label: 'Idea seems unoriginal', score: -3, checked: false },
         { id: 'pd5', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
@@ -39,10 +39,10 @@ export default function GradingForm() {
         { id: 'nz4', label: 'Culture Section cultural aspects that affect CB', score: 2, checked: false },
         { id: 'nz5', label: 'Behaviour section specific examples of CB in NZ', score: 2, checked: false },
         { id: 'nz6', label: 'No chart included in this section', score: -2, checked: false },
-        { id: 'nz7', label: 'Missing citations', score: -2, checked: false },
-        { id: 'nz8', label: 'Inaccurate citations', score: -2, checked: false },
-        { id: 'nz9', label: 'Parts don't make sense or not in NZ or too broad to refer to NZ alone', score: -2, checked: false },
-        { id: 'nz10', label: 'Obviously inaccurate statistics eg population under 5 million', score: -2, checked: false },
+        { id: 'nz7', label: 'Incorrect median income OR incorrect citation for median income', score: -2, checked: false },
+        { id: 'nz8', label: 'Missing or inaccurate statistics (e.g. population etc.)', score: -2, checked: false },
+        { id: 'nz9', label: 'Missing or inaccurate citations (not valid sources, missing references, etc.)', score: -2, checked: false },
+        { id: 'nz10', label: 'Parts dont make sense for actual NZ or are too broad (could refer to any country)', score: -2, checked: false },
         { id: 'nz11', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
@@ -53,7 +53,7 @@ export default function GradingForm() {
         { id: 's1_2', label: 'Demographic factors (age, gender, location)', score: 2, checked: false },
         { id: 's1_4', label: 'Socioeconomic factors (versus median income, occupation)', score: 2, checked: false },
         { id: 's1_5', label: 'Behavioural, cultural factors related to product (how product is used, accessed)', score: 4, checked: false },
-        { id: 's1_6', label: 'Income level not compared to median income', score: -2, checked: false },
+        { id: 's1_6', label: 'Income level not compared to median income or incorrect median used', score: -2, checked: false },
         { id: 's1_7', label: 'Too general to be an identified segment', score: -2, checked: false },
         { id: 's1_8', label: 'Unclear as to how segment derives value from product', score: -2, checked: false },
         { id: 's1_9', label: 'Suspected Undeclared AI use', score: 0, checked: false }
@@ -66,7 +66,7 @@ export default function GradingForm() {
         { id: 's2_2', label: 'Demographic factors (age, gender, location)', score: 2, checked: false },
         { id: 's2_4', label: 'Socioeconomic factors (versus median income, occupation)', score: 2, checked: false },
         { id: 's2_5', label: 'Behavioural, cultural factors related to product (how product is used, accessed)', score: 4, checked: false },
-        { id: 's2_6', label: 'Income level not compared to median income', score: -2, checked: false },
+        { id: 's2_6', label: 'Income level not compared to median income or incorrect median used', score: -2, checked: false },
         { id: 's2_7', label: 'Too general to be an identified segment', score: -2, checked: false },
         { id: 's2_8', label: 'Unclear as to how segment derives value from product', score: -2, checked: false },
         { id: 's2_10', label: 'Not distinct from Segment 1', score: -2, checked: false }
