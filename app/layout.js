@@ -9,7 +9,9 @@ const inter = Inter({
 export const metadata = {
   title: "STP 25a Grading Form",
   description: "STP 25a grading form 13 April 2025",
-};
+icons: {
+    icon: "/favicon.svg",  // Link to your favicon file
+  },};
 
 export default function RootLayout({ children }) {
   return (
