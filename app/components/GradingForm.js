@@ -69,7 +69,7 @@ export default function GradingForm() {
         { id: 's2_6', label: 'Income level not compared to median income or incorrect median used', score: -2, checked: false },
         { id: 's2_7', label: 'Too general to be an identified segment', score: -2, checked: false },
         { id: 's2_8', label: 'Unclear as to how segment derives value from product', score: -2, checked: false },
-        { id: 's2_10', label: 'Not distinct from Segment 1', score: -2, checked: false }
+        { id: 's2_10', label: 'Not distinct from Segment 1', score: -2, checked: false },
         { id: 's2_9', label: 'Suspected Undeclared AI use', score: 0, checked: false }
       ]
     },
