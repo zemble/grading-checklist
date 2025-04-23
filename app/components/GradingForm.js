@@ -41,7 +41,7 @@ export default function GradingForm() {
         { id: 'nz6', label: 'No chart included in this section', score: -2, checked: false },
         { id: 'nz7', label: 'Incorrect most recent median income OR incorrect citation for median income', score: -2, checked: false },
         { id: 'nz8', label: 'Missing or inaccurate statistics (e.g. population etc.)', score: -2, checked: false },
-        { id: 'nz9', label: 'Missing, inaccurate, old (pre-2018), or invalid citations used', score: -2, checked: false },
+        { id: 'nz9', label: 'Missing, inaccurate, old (pre-2018), or multiple invalid citations (Money Hub, Statista, Figure NZ, CIA, Worldometer, etc.) used', score: -2, checked: false },
         { id: 'nz10', label: 'Parts do not clearly and explicitly explain consumers in NZ (could refer to any country)', score: -2, checked: false },
         { id: 'nz12', label: 'One or more parts are excessively brief or inadequately annotated', score: -2, checked: false },
         { id: 'nz13', label: 'Multiple citations from same source in same year not correctly formatted', score: -2, checked: false },
