@@ -53,7 +53,7 @@ export default function GradingForm() {
       items: [
         { id: 's1_1', label: 'Has segment name', score: 2, checked: false },
         { id: 's1_2', label: 'Demographic factors (age, gender, location)', score: 2, checked: false },
-        { id: 's1_4', label: 'Socioeconomic factors (versus median income, occupation)', score: 2, checked: false },
+        { id: 's1_4', label: 'Socioeconomic factors (income, occupation)', score: 2, checked: false },
         { id: 's1_5', label: 'Behavioural, cultural factors related to product (how product is used, accessed)', score: 4, checked: false },
         { id: 's1_6', label: 'Income level not compared to median income or incorrect median used', score: -2, checked: false },
         { id: 's1_7', label: 'Too general to be an identified segment', score: -2, checked: false },
@@ -66,7 +66,7 @@ export default function GradingForm() {
       items: [
         { id: 's2_1', label: 'Has segment name', score: 2, checked: false },
         { id: 's2_2', label: 'Demographic factors (age, gender, location)', score: 2, checked: false },
-        { id: 's2_4', label: 'Socioeconomic factors (versus median income, occupation)', score: 2, checked: false },
+        { id: 's2_4', label: 'Socioeconomic factors (income, occupation)', score: 2, checked: false },
         { id: 's2_5', label: 'Behavioural, cultural factors related to product (how product is used, accessed)', score: 4, checked: false },
         { id: 's2_6', label: 'Income level not compared to median income or incorrect median used', score: -2, checked: false },
         { id: 's2_7', label: 'Too general to be an identified segment', score: -2, checked: false },
@@ -81,7 +81,7 @@ export default function GradingForm() {
         { id: 'id1', label: 'Has segment name (matches previous)', score: 1, checked: false },
         { id: 'id2', label: 'Demographic factors (as previous)', score: 1, checked: false },
         { id: 'id4', label: 'Socioeconomic factors (as previous)', score: 1, checked: false },
-        { id: 'id5', label: 'Behavioural, cultural factors (as previous))', score: 2, checked: false },
+        { id: 'id5', label: 'Behavioural, cultural factors (as previous)', score: 2, checked: false },
         { id: 'id6', label: 'Income level not compared to median income', score: -2, checked: false },
         { id: 'id7', label: 'Too general to be an identified segment', score: -1, checked: false },
         { id: 'id8', label: 'Unclear as to how segment derives value from product', score: -1, checked: false },
